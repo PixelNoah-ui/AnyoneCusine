@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
-import { LoadCartFromLoacl, saveCart } from "../../../utils/helper";
+import { LoadCartFromLoacl, saveCart } from "../../utils/helper";
 
 const initialState = LoadCartFromLoacl() || {
   cartitem: [],
