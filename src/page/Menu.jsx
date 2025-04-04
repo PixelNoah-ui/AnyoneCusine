@@ -3,8 +3,8 @@ import Button from "../Components/ui/Button";
 import { Link, useSearchParams } from "react-router-dom";
 import useGetDishes from "../Components/dishes/usegetDishes";
 import Spinner from "../Components/ui/Spinner";
-import { useDispatch } from "react-redux";
 import { addItem } from "../Components/cart/cartslice";
+import { useDispatch } from "react-redux";
 
 function Menu() {
   const { dishes, isLoading } = useGetDishes();
