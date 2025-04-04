@@ -1,7 +1,7 @@
 import { HiOutlinePlus, HiOutlineSearch } from "react-icons/hi";
 import Button from "../Components/ui/Button";
 import { Link, useSearchParams } from "react-router-dom";
-import useGetDishes from "../Components/dishes/usegetDishes";
+import useGetDishes from "../Components/dishes/useGetDishes";
 import Spinner from "../Components/ui/Spinner";
 import { addItem } from "../Components/cart/cartslice";
 import { useDispatch } from "react-redux";
