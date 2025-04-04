@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "tailwindcss"],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

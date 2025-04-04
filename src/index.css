@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  width: 100%;
+}
