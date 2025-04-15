@@ -3,7 +3,7 @@ const familyData = [
     name: "Abdulsemed ",
     role: "Founder & Head Chef",
     bio: "Born and raised in Harar, Abdulsemed brings 25 years of culinary expertise and his family's treasured recipes.",
-    image: "/images/anyone.jpg",
+    image: "/images/anyone.webpgit",
   },
   {
     name: "Mensur ",
