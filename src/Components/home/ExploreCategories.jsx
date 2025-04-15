@@ -34,15 +34,15 @@ function ExploreCategories() {
 
   return (
     <div className="bg-yellow-50 px-4 py-16 dark:bg-slate-800">
-      <div className="container mx-auto">
-        <h1 className="mb-7 text-center text-3xl font-bold text-slate-900 dark:text-white">
+      <div className="">
+        <h1 className="container mx-auto mb-7 max-w-7xl text-center text-3xl font-bold text-slate-900 dark:text-white">
           Explore Our Categories
         </h1>
 
-        <div className="grid grid-cols-1 gap-4 px-12 sm:grid-cols-2 md:grid-cols-4 md:px-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
           {featuredDishes?.map((dish) => (
             <div
-              className="group relative h-48 overflow-hidden rounded-xl"
+              className="relative h-48 overflow-hidden rounded-xl"
               key={dish.id}
             >
               <Link

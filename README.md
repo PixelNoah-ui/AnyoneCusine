@@ -6,7 +6,7 @@ AnyOneCuisine is a modern and beautifully designed Ethiopian food ordering web a
 
 ## 🚀 Live Demo
 
-[Visit the Live Site](https://anyonecuisine.vercel.app)
+[Visit the Live Site](https://anyone-cusine-boso.vercel.app/)
 
 ---
 
