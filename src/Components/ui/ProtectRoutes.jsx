@@ -1,24 +1,18 @@
-import { useEffect } from "react";
+import { Navigate, useLocation } from "react-router-dom";
 import useUser from "../authentication/useUser";
-import { useNavigate } from "react-router-dom";
 import Spinner from "./Spinner";
 
 function ProtectRoutes({ children }) {
   const { isAuthenticated, isLoading } = useUser();
-  const navigate = useNavigate();
-
-  useEffect(
-    function () {
-      if (!isAuthenticated && !isLoading) {
-        navigate("/login");
-      }
-    },
-    [isAuthenticated, isLoading, navigate],
-  );
+  const location = useLocation();
 
   if (isLoading) return <Spinner />;
 
-  if (isAuthenticated) return children;
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace state={{ from: location }} />;
+  }
+
+  return children;
 }
 
 export default ProtectRoutes;

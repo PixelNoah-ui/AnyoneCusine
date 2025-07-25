@@ -17,9 +17,13 @@ export default function CompactSignInForm() {
   } = useForm();
   const { login, isPending } = useLogin();
   function onsubmit(data) {
-    login(data, {
-      onSettled: () => reset(),
-    });
+    login(
+      data,
+
+      {
+        onSettled: () => reset(),
+      },
+    );
   }
 
   if (isPending) return <Spinner />;
@@ -93,12 +97,6 @@ export default function CompactSignInForm() {
                       value: 8,
                       message: "password must be at least 8 character long",
                     },
-                    pattern: {
-                      value:
-                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                      message:
-                        "Must include uppercase, lowercase, number & special character",
-                    },
                   })}
                 />
               </div>
@@ -157,7 +155,9 @@ export default function CompactSignInForm() {
 
           <p className="mt-4 text-center text-sm text-gray-600 dark:text-slate-300">
             Don't have an account?{" "}
-            <Link className="text-amber-600 hover:text-amber-500">Sign up</Link>
+            <Link to="/signup" className="text-amber-600 hover:text-amber-500">
+              Sign up
+            </Link>
           </p>
         </div>
       </div>

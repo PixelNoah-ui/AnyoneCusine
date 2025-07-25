@@ -10,6 +10,7 @@ function useLogin() {
     mutationFn: ({ email, password }) => singIn({ email, password }),
     onSuccess: (user) => {
       navigate("/", { replace: true });
+
       queryClient.setQueryData(["user"], user);
     },
     onError: (error) => toast.error(error.message),

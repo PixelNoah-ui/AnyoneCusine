@@ -4,6 +4,7 @@ import Spinner from "./Components/ui/Spinner";
 import "./index.css";
 
 import ProtectRoutes from "./Components/ui/ProtectRoutes";
+import SignUpForm from "./Components/ui/SignUpfrom";
 
 const Home = lazy(() => import("./page/Home"));
 const Menu = lazy(() => import("./page/Menu"));
@@ -23,25 +24,41 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<Spinner />}>
         <Routes>
-          <Route
-            element={
-              <ProtectRoutes>
-                <Layout />
-              </ProtectRoutes>
-            }
-          >
+          <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
             <Route path="/dish/:dishID" element={<FoodDetails />} />
-            <Route path="/order-success" element={<OrderSuccess />} />
-            <Route path="/myorder" element={<Myorder />} />
+            <Route
+              path="/checkout"
+              element={
+                <ProtectRoutes>
+                  <Checkout />
+                </ProtectRoutes>
+              }
+            />
+            <Route
+              path="/order-success"
+              element={
+                <ProtectRoutes>
+                  <OrderSuccess />
+                </ProtectRoutes>
+              }
+            />
+            <Route
+              path="/myorder"
+              element={
+                <ProtectRoutes>
+                  <Myorder />
+                </ProtectRoutes>
+              }
+            />
             <Route path="*" element={<PageIsNotFound />} />
           </Route>
           <Route path="/login" element={<SignInForm />} />
+          <Route path="/signup" element={<SignUpForm />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
